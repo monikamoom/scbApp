@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt' // add kotlin compiler
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.codemobiles.scbauthen"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
+    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "androidx.cardview:cardview:$rootProject.cardviewViewVersion"
+    implementation "androidx.viewpager:viewpager:$rootProject.viewpagerVersion"
+
+    //connect Network
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    // Image loading framework
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    testImplementation 'junit:junit:4.12'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+// Shared Preference
+    implementation "com.pixplicity.easyprefs:library:$rootProject.easyprefsVersion"
+
+
+    // Youtube
+    implementation "com.thefinestartist:ytpa:$rootProject.youtubeVersion"
+
+    // Segment Control
+    implementation "info.hoang8f:android-segmented:$rootProject.segmentVersion"
+
+    // Room components
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
+
+
+}
+
+
+
+// MPAndroidChart - Chart library for Android --- Begin
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation "com.github.PhilJay:MPAndroidChart:$rootProject.mpAndroidChartVersion"
+}
+// MPAndroidChart - chart library for Android --- End
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:+'
+    implementation 'com.google.android.material:material:+'
+    implementation 'androidx.constraintlayout:constraintlayout:+'
+    implementation 'androidx.lifecycle:lifecycle-extensions:+'
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:+'
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:+'
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:+'
+}

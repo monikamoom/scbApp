@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:card_view="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="24dp"
+              android:paddingRight="24dp"
+              android:paddingTop="8dp">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="#cdffffff"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="2sp"
+            card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                <ImageView
+                        android:id="@+id/item_list_avatar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="12dp"
+                        tools:src="@drawable/cmdev_circle_logo" />
+
+                <TextView
+                        android:id="@+id/item_list_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/item_list_avatar"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        tools:text="title"
+                        android:textColor="#dc000000"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:id="@+id/item_list_subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_list_title"
+                        android:layout_toRightOf="@+id/item_list_avatar"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        tools:text="subtitle"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                    android:id="@+id/item_list_youtube_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/cmdev_default_black" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
